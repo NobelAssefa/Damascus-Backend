@@ -44,7 +44,7 @@ router.get("/findall", async (req, res)=>{
 
 //GET BY ID
 //GETAll
-router.get("/:id", async (req, res)=>{
+router.get("/find/:id", async (req, res)=>{
    
     try{
         const products = await Product.findById(req.params.id);

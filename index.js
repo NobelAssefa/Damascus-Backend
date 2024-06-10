@@ -7,13 +7,14 @@ const productRoute = require("./Routes/Product")
 const orderRoute = require("./Routes/Order")
 const cartRoute = require("./Routes/Cart")
 const app = express();
+const cors = require("cors");
 dotenv.config()
 
 app.use(express.json())
 app.listen(process.env.PORT || 5000, ()=>{
     console.log("Backend is running..")
 })
-
+app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute )
 app.use("/api/products", productRoute )
